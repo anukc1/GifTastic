@@ -87,7 +87,7 @@ renderButtons();
 
                 foodImage.attr("data-animate", results[i].images.fixed_height.url);
 
-                foodImage.attr("data-state", results[i].images.fixed_height_still.url)
+                foodImage.attr("data-state", "still")
   
                 // Appending the paragraph and foodImage we created to the "gifDiv" div we created
                 gifDiv.append(p);
