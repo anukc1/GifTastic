@@ -1,29 +1,6 @@
 
 
-// function buildQueryURL() {
 
-//     var queryURL = "https://api.giphy.com/v1/gifs/search?q=";
-
-//     var queryParams = { "api-key" : "w7TBvJRUGRHWa7CopemoRL8xdJGsEN7C" };
-
-//     queryParams.q = $("#food-input")
-//     .val()
-//     .trim();
-
-
-
-
-// console.log("------\nURL: " + queryURL + "\n--------");
-// console.log (queryURL + $.param(queryParams));
-// return queryURL + $.param(queryParams);
-// }  
-//    console.log("this is a test"); 
-
-// function updatePage(GiphyData) {
-
-
-
-// }
 
 var foods = ["Pasta", "pizza", "taco"]
 
@@ -42,10 +19,12 @@ function renderButtons() {
 
     a.text(foods[i]);
     $("#button-view").append(a);
+
+
   }
 }
 
-renderButtons();
+// renderButtons();
 
 
 
@@ -58,12 +37,12 @@ $("#add-food").on("click", function(event) {
   renderButtons();
 });
 
-
+renderButtons();
 
 
 //    // This shows the gif on clicking the button.  
        
-    $(".food").on("click", function() {
+    $("#button-view").on("click", ".food", function() {
         // In this case, the "this" keyword refers to the button that was clicked
         var food = $(this).attr("data-food");
   
@@ -85,7 +64,7 @@ $("#add-food").on("click", function(event) {
             for (var i = 0; i < results.length; i++) {
   
               // Only taking action if the photo has an appropriate rating
-              if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
+              
                 // Creating a div for the gif
                 var gifDiv = $("<div>");
   
@@ -97,10 +76,18 @@ $("#add-food").on("click", function(event) {
   
                 // Creating an image tag
                 var foodImage = $("<img>");
+
+                foodImage.addClass("foodimage");
   
                 // Giving the image tag an src attribute of a proprty pulled off the
                 // result item
-                foodImage.attr("src", results[i].images.fixed_height.url);
+                foodImage.attr("src", results[i].images.fixed_height_still.url);
+
+                foodImage.attr("data-still", results[i].images.fixed_height_still.url);
+
+                foodImage.attr("data-animate", results[i].images.fixed_height.url);
+
+                foodImage.attr("data-state", results[i].images.fixed_height_still.url)
   
                 // Appending the paragraph and foodImage we created to the "gifDiv" div we created
                 gifDiv.append(p);
@@ -108,7 +95,30 @@ $("#add-food").on("click", function(event) {
   
                 // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
                 $("#gif-view").prepend(gifDiv);
-              }
+              
             }
           });
       });
+          // $("#button-view").on("click", ".food", function() {   "data-animate", "data-state"
+
+
+
+          //------------
+
+
+      $("#gif-view").on("click", ".foodimage", function() {
+
+        var state = $(this).attr("data-state");
+
+        if (state === "still") {
+          $(this).attr("src", $(this).attr("data-animate"));
+          $(this).attr("data-state", "animate");
+
+        } else {
+
+          $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+
+        }
+      }
+      )

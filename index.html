@@ -5,34 +5,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>GifTastic</title>
+
+  <style>
+      #button-view {
+        float:left;
+        width: 50em;
+        height: 5em;
+      }
+  
+      .food {
+        font: bold;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        
+      }
+  </style>
+
+
 </head>
 
 <body>
   <div class="container">
 
-    <div id="button-view">
-
-      <!-- <button data-food="pasta">Pasta Pasta</button>
-      <button data-food="Pizza">
-        Pizza Pizza
-      </button>
-      <button data-food="salad">Salad</button>
-      <button data-food="tacos">Tacos</button> -->
+          <div class="row one">
 
 
 
-    </div>
+            <div id="button-view">
 
-    <form id="food-form">
-      <label for="food-input">Search your food.</label>
-      <input type="text" id="food-input">
-      <br>
+              <!-- <button data-food="pasta">Pasta Pasta</button>
+              <button data-food="Pizza">
+                Pizza Pizza
+              </button>
+              <button data-food="salad">Salad</button>
+              <button data-food="tacos">Tacos</button> -->
 
-      <input id="add-food" type="submit" value="Search your food.">
-    </form>
 
-    <div id="gif-view"></div>
+
+            </div>
+
+
+            <form id="food-form">
+              <label for="food-input">Search your food.</label>
+              <input type="text" id="food-input">
+              <br>
+
+              <input id="add-food" type="submit" value="Search your food.">
+            </form>
+          </div>
+
+          <div class="row two">
+
+            <div id="gif-view"></div>
+          </div>
+
+            
+
+
+          </div>
 
 
   </div>
