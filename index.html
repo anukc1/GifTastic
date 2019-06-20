@@ -8,17 +8,19 @@
   <title>GifTastic</title>
 
   <style>
-      #button-view {
-        float:left;
-        width: 50em;
-        height: 5em;
-      }
-  
-      .food {
-        font: bold;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        
-      }
+
+    * {
+      box-sizing: border-box;
+    }
+    .food {
+      float: left;
+      width: 15em;
+      height: 3em;
+      padding: 5px;
+      margin: 5px;
+    }
+
+   
   </style>
 
 
@@ -27,13 +29,13 @@
 <body>
   <div class="container">
 
-          <div class="row one">
+    <div class="row one">
 
 
 
-            <div id="button-view">
+      <div class="col-md-8" id="button-view">
 
-              <!-- <button data-food="pasta">Pasta Pasta</button>
+        <!-- <button data-food="pasta">Pasta Pasta</button>
               <button data-food="Pizza">
                 Pizza Pizza
               </button>
@@ -42,27 +44,32 @@
 
 
 
-            </div>
+      </div>
+
+      <div class="col-md-4">
+        <form id="food-form">
+          <label for="food-input">Search your food.</label>
+          <input type="text" id="food-input">
+          <br>
+
+          <input id="add-food" type="submit" value="Search your food.">
+        </form>
+      </div>
+    </div>
+
+    <div class="row two">
+
+      <div class="col-md-12 giffy">
+
+        <div id="gif-view"></div>
+
+      </div>
+    </div>
 
 
-            <form id="food-form">
-              <label for="food-input">Search your food.</label>
-              <input type="text" id="food-input">
-              <br>
-
-              <input id="add-food" type="submit" value="Search your food.">
-            </form>
-          </div>
-
-          <div class="row two">
-
-            <div id="gif-view"></div>
-          </div>
-
-            
 
 
-          </div>
+  </div>
 
 
   </div>

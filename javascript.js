@@ -2,7 +2,7 @@
 
 
 
-var foods = ["Pasta", "pizza", "taco"]
+var foods = ["Pasta", "pizza", "taco", "salad"]
 
 
 function renderButtons() {
@@ -99,12 +99,7 @@ renderButtons();
             }
           });
       });
-          // $("#button-view").on("click", ".food", function() {   "data-animate", "data-state"
-
-
-
-          //------------
-
+         
 
       $("#gif-view").on("click", ".foodimage", function() {
 
